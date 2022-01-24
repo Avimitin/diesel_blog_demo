@@ -1,0 +1,59 @@
+# vim: tw=80 fo+=t
+GitHub Repo:      https://github.com/diesel-rs/diesel
+Tutorial:         https://diesel.rs/guides/getting-started
+API Docs:         https://docs.diesel.rs/1.4.x/diesel/index.html
+Postgresql image: https://hub.docker.com/_/postgres
+
+* TODO build a diesel demo
+** TODO Write the schema
+** TODO use postgres
+
+* The design
+
+** Blog post
+  - title
+  - author => (id)
+  - content
+  - id
+** User
+  - name
+  - id
+
+* Postgres related
+
+** Run the server by docker
+Use docker to run the db:
+
+#+BEGIN_SRC bash
+$ docker run --name diesel_demo --rm -p 5432:5432 -e POSTGRES_PASSWORD=DIESEL_DEMO_PWD -e POSTGRES_DB=diesel_demo -d postgres:14
+#+END_SRC
+
+** Syntax Notes
+
+*** boolean value type:
+    - STANDARD: =TRUE=, =FALSE=, =NULL=
+    - Support: true, 't', 'true', 'y', 'yes', '1'. The false is the opposite.
+*** what is serial
+    Assign serial to object can create a sequence. Then add =NOT NULL=
+    constraint to the id. Assign the sequence owner ship to the valuable.
+
+* Diesel CLI notes
+** The setup and migration
+
+- The =diesel setup= will create a empty migration directory and setup database.
+
+- The =diesel migration generate xxx= will create two migration file under the
+  migration directory. One is the down.sql, it can help reverting. Another is the
+  up.sql, it can help applying changes.
+
+** migration
+*** A Note on Using Migrations in Production:
+    When preparing your app for use in production, you may want to run your
+    migrations during the application’s initialization phase. You may also want to
+    include the migration scripts as a part of your code, to avoid having to copy
+    them to your deployment location/image etc.
+
+    The diesel_migrations crate provides the embed_migrations! macro, allowing you
+    to embed migration scripts in the final binary. Once your code uses it, you can
+    simply include embedded_migrations::run(&db_conn) at the start of your main
+    function to run migrations every time the application starts.
