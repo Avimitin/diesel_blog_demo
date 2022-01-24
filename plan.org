@@ -1,12 +1,18 @@
 # vim: tw=80 fo+=t
-GitHub Repo:      https://github.com/diesel-rs/diesel
-Tutorial:         https://diesel.rs/guides/getting-started
-API Docs:         https://docs.diesel.rs/1.4.x/diesel/index.html
-Postgresql image: https://hub.docker.com/_/postgres
+* Resources
 
-* TODO build a diesel demo
-** TODO Write the schema
-** TODO use postgres
+- GitHub Repo:      https://github.com/diesel-rs/diesel
+- Tutorial:         https://diesel.rs/guides/getting-started
+- API Docs:         https://docs.diesel.rs/1.4.x/diesel/index.html
+- Postgresql image: https://hub.docker.com/_/postgres
+
+* TODO Road map
+** DONE Write the schema
+   CLOSED: <2022-01-24 Mon>
+** DONE use postgres
+   CLOSED: <2022-01-24 Mon> 
+** TODO Write a cli to create new post
+** TODO Add user schema and link user to post
 
 * The design
 
