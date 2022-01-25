@@ -1,7 +1,7 @@
-use std::env::args;
-use blog_demo::*;
 use self::models::Post;
+use blog_demo::*;
 use diesel::prelude::*;
+use std::env::args;
 
 fn main() {
     use blog_demo::schema::posts::dsl::{posts, published};

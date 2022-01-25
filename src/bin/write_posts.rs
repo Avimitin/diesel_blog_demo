@@ -8,7 +8,7 @@ fn main() {
     println!("Input the title\n");
     let mut title = String::new();
     stdin().read_line(&mut title).unwrap();
-    let title = &title[..(title.len()-1)];
+    let title = &title[..(title.len() - 1)];
     println!("Input the body!\n");
     let mut body = String::new();
     stdin().read_line(&mut body).unwrap();
