@@ -10,7 +10,12 @@ First initiate the docker server::
 
 Then run the cli::
 
+    # Get published posts
   $ cargo run --bin show_posts
+    # Write new posts
+  $ cargo run --bin write_posts
+    # Publish post
+  $ cargo run --bin publish <id>
 
 Roadmap
 -------
