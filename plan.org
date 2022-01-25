@@ -11,7 +11,8 @@
    CLOSED: <2022-01-24 Mon>
 ** DONE use postgres
    CLOSED: <2022-01-24 Mon> 
-** TODO Write a cli to create new post
+** DONE Write a cli to create new post
+   CLOSED: <2022-01-25 Tue>
 ** TODO Add user schema and link user to post
 
 * The design
